@@ -1,0 +1,13 @@
+# Privacy & Security
+.env
+.env.local
+*.env
+
+# System Clutter
+.DS_Store
+Thumbs.db
+__MACOSX
+
+# Vercel & Background Logs
+.vercel
+*.log
