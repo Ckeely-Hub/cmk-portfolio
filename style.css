@@ -216,9 +216,9 @@ a:focus-visible {
 	display: grid;
 	grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
 	gap: 32px;
-	margin-top: 80px;
-	padding-block: 32px 72px;
-	border-top: 1px solid rgb(51 101 138 / 24%);
+	margin-top: 64px;
+	padding-block: 32px 40px;
+	border-bottom: 1px solid rgb(51 101 138 / 24%);
 }
 
 .project-overview h2 {
@@ -235,6 +235,111 @@ a:focus-visible {
 	margin: 0;
 	font-size: 16px;
 	line-height: 1.7;
+}
+
+.project-copy-section {
+	max-width: 76ch;
+}
+
+.project-detail-section {
+	padding-block: 40px;
+}
+
+.project-copy-section h2 {
+	margin: 0;
+	color: var(--color-structure);
+	font-family: var(--font-heading);
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.project-copy-section p {
+	margin: 16px 0 0;
+	font-size: 16px;
+	line-height: 1.7;
+}
+
+.project-timeline {
+	position: relative;
+	margin: 16px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.project-timeline::before {
+	position: absolute;
+	top: 22px;
+	bottom: 22px;
+	left: 21px;
+	width: 2px;
+	background: rgb(51 101 138 / 35%);
+	content: "";
+}
+
+.timeline-stage {
+	position: relative;
+	display: grid;
+	grid-template-columns: 44px minmax(0, 1fr);
+	column-gap: 20px;
+	padding-bottom: 28px;
+}
+
+.timeline-stage:last-child {
+	padding-bottom: 0;
+}
+
+.timeline-number {
+	position: relative;
+	z-index: 1;
+	display: grid;
+	width: 44px;
+	height: 44px;
+	place-items: center;
+	border-radius: 50%;
+	background: var(--color-structure);
+	color: var(--color-canvas);
+	font-family: var(--font-heading);
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.timeline-entry {
+	min-width: 0;
+	padding-top: 7px;
+}
+
+.timeline-entry h3 {
+	margin: 0;
+	color: var(--color-structure);
+	font-family: var(--font-heading);
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.timeline-details {
+	margin-top: 14px;
+}
+
+.timeline-details > :first-child {
+	margin-top: 0;
+}
+
+.timeline-details > :last-child {
+	margin-bottom: 0;
+}
+
+.timeline-details img,
+.timeline-details video {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.timeline-details figure {
+	max-width: 100%;
+	margin-inline: 0;
 }
 
 .hero h1 {
@@ -402,8 +507,17 @@ a:focus-visible {
 	.project-overview {
 		grid-template-columns: 1fr;
 		gap: 16px;
-		margin-top: 56px;
-		padding-block: 28px 56px;
+		margin-top: 40px;
+		padding-block: 28px 32px;
+	}
+
+	.timeline-stage {
+		column-gap: 16px;
+		padding-bottom: 24px;
+	}
+
+	.project-detail-section {
+		padding-block: 32px;
 	}
 }
 
@@ -458,6 +572,38 @@ a:focus-visible {
 
 	.project-overview h2 {
 		font-size: 24px;
+	}
+
+	.project-copy-section h2 {
+		font-size: 24px;
+	}
+
+	.timeline-stage {
+		grid-template-columns: 40px minmax(0, 1fr);
+		column-gap: 12px;
+		padding-bottom: 20px;
+	}
+
+	.project-timeline::before {
+		left: 19px;
+	}
+
+	.timeline-number {
+		width: 40px;
+		height: 40px;
+		font-size: 15px;
+	}
+
+	.timeline-entry {
+		padding-top: 5px;
+	}
+
+	.timeline-entry h3 {
+		font-size: 18px;
+	}
+
+	.timeline-details {
+		margin-top: 10px;
 	}
 
 	.portfolio {
