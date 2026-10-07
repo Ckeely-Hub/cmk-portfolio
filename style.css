@@ -162,6 +162,10 @@ a:focus-visible {
 }
 
 .project-hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+	align-items: center;
+	gap: clamp(32px, 6vw, 80px);
 	padding-block: 80px 64px;
 }
 
@@ -179,6 +183,26 @@ a:focus-visible {
 	margin: 20px 0 0;
 	font-size: 18px;
 	line-height: 1.65;
+}
+
+.project-hero-media {
+	display: grid;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	place-items: center;
+	border: 1px solid rgb(51 101 138 / 24%);
+	border-radius: 4px;
+	background:
+		linear-gradient(135deg, rgb(85 221 224 / 26%), transparent 58%),
+		linear-gradient(315deg, rgb(246 174 45 / 22%), transparent 52%),
+		#E8EEF1;
+	color: var(--color-structure);
+}
+
+.project-hero-media span {
+	font-family: var(--font-heading);
+	font-size: 14px;
+	font-weight: 600;
 }
 
 .project-facts {
@@ -218,6 +242,7 @@ a:focus-visible {
 	gap: 32px;
 	margin-top: 64px;
 	padding-block: 32px 40px;
+	border-top: 1px solid rgb(51 101 138 / 24%);
 	border-bottom: 1px solid rgb(51 101 138 / 24%);
 }
 
@@ -492,6 +517,8 @@ a:focus-visible {
 	}
 
 	.project-hero {
+		grid-template-columns: 1fr;
+		gap: 28px;
 		padding-block: 64px 48px;
 	}
 
