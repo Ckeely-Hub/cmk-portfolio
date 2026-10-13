@@ -220,6 +220,24 @@ a:focus-visible {
 	line-height: 1.4;
 }
 
+.dropdown-menu .all-projects-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.all-projects-link svg {
+	flex: 0 0 16px;
+	width: 16px;
+	height: 16px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.8;
+}
+
 .dropdown-menu a:hover,
 .dropdown-menu a:focus-visible {
 	background: var(--color-interactive);
