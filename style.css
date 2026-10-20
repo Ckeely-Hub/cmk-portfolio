@@ -4,9 +4,9 @@
 	color-scheme: light;
 	--color-canvas: #F8F9FA;
 	--color-text: #1A202C;
-	--color-structure: #2F4858;
+	--color-structure: #33658A;
 	--color-container: #33658A;
-	--color-spotlight: #F6AE2D;
+	--color-spotlight: #55DDE0;
 	--color-interactive: #55DDE0;
 	--font-body: 'Open Sans', sans-serif;
 	--font-heading: 'Montserrat', sans-serif;
@@ -104,7 +104,7 @@ a:focus-visible {
 	width: 40px;
 	height: 40px;
 	place-items: center;
-	border: 1px solid rgb(47 72 88 / 36%);
+	border: 1px solid rgb(51 101 138 / 36%);
 	border-radius: 50%;
 	background: var(--color-canvas);
 	color: var(--color-structure);
@@ -222,7 +222,7 @@ a:focus-visible {
 	border: 1px solid rgb(51 101 138 / 24%);
 	border-radius: 4px;
 	background: var(--color-canvas);
-	box-shadow: 0 12px 28px rgb(47 72 88 / 12%);
+	box-shadow: 0 12px 28px rgb(51 101 138 / 12%);
 	list-style: none;
 	opacity: 0;
 	pointer-events: none;
@@ -276,8 +276,12 @@ a:focus-visible {
 
 .dropdown-menu a:hover,
 .dropdown-menu a:focus-visible {
-	background: var(--color-interactive);
+	background:
+		linear-gradient(135deg, rgb(38 120 183 / 26%), transparent 58%),
+		linear-gradient(315deg, rgb(85 221 224 / 22%), transparent 52%),
+		var(--color-canvas);
 	color: var(--color-structure);
+	font-weight: 700;
 }
 
 .hero {
@@ -312,9 +316,9 @@ a:focus-visible {
 	border: 1px solid rgb(51 101 138 / 24%);
 	border-radius: 4px;
 	background:
-		linear-gradient(135deg, rgb(85 221 224 / 26%), transparent 58%),
-		linear-gradient(315deg, rgb(246 174 45 / 22%), transparent 52%),
-		#E8EEF1;
+		linear-gradient(135deg, rgb(38 120 183 / 26%), transparent 58%),
+		linear-gradient(315deg, rgb(85 221 224 / 22%), transparent 52%),
+		var(--color-canvas);
 	color: var(--color-structure);
 	text-align: center;
 }
@@ -364,10 +368,14 @@ a:focus-visible {
 }
 
 .about-action {
+	display: inline-flex;
 	min-width: 124px;
 	padding: 11px 20px;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
 	border: 1px solid var(--color-container);
-	border-radius: 4px;
+	border-radius: 8px;
 	background: var(--color-container);
 	color: #FFFFFF;
 	font-family: var(--font-body);
@@ -376,13 +384,34 @@ a:focus-visible {
 	line-height: 1.4;
 }
 
+.about-action svg {
+	flex: 0 0 18px;
+	width: 18px;
+	height: 18px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.8;
+}
+
+.about-action--copy {
+	border-color: rgb(51 101 138 / 36%);
+	background:
+		linear-gradient(135deg, rgb(38 120 183 / 42%), transparent 58%),
+		linear-gradient(315deg, rgb(85 221 224 / 36%), transparent 52%),
+		var(--color-canvas);
+	color: var(--color-text);
+}
+
 button.about-action:not(:disabled) {
 	cursor: pointer;
 }
 
-button.about-action:not(:disabled):hover {
-	border-color: var(--color-structure);
-	background: var(--color-structure);
+button.about-action:hover {
+	border-color: var(--color-interactive);
+	background: var(--color-interactive);
+	color: var(--color-text);
 }
 
 .about-action:focus-visible {
@@ -394,6 +423,14 @@ button.about-action:not(:disabled):hover {
 	border-color: rgb(51 101 138 / 36%);
 	background: #E8EEF1;
 	color: var(--color-structure);
+}
+
+.about-action--resume:disabled {
+	background:
+		linear-gradient(135deg, rgb(38 120 183 / 42%), transparent 58%),
+		linear-gradient(315deg, rgb(85 221 224 / 36%), transparent 52%),
+		var(--color-canvas);
+	color: var(--color-text);
 }
 
 .email-toast[hidden] {
@@ -410,10 +447,10 @@ button.about-action:not(:disabled):hover {
 	align-items: center;
 	gap: 10px;
 	padding: 14px 18px;
-	border: 1px solid rgb(47 72 88 / 20%);
-	border-radius: 4px;
+	border: 1px solid rgb(51 101 138 / 20%);
+	border-radius: 8px;
 	background: #FFFFFF;
-	box-shadow: 0 8px 24px rgb(47 72 88 / 16%);
+	box-shadow: 0 8px 24px rgb(51 101 138 / 16%);
 	color: var(--color-text);
 	opacity: 0;
 	transform: translateY(8px);
@@ -468,9 +505,9 @@ button.about-action:not(:disabled):hover {
 	border: 1px solid rgb(51 101 138 / 24%);
 	border-radius: 4px;
 	background:
-		linear-gradient(135deg, rgb(85 221 224 / 26%), transparent 58%),
-		linear-gradient(315deg, rgb(246 174 45 / 22%), transparent 52%),
-		#E8EEF1;
+		linear-gradient(135deg, rgb(38 120 183 / 26%), transparent 58%),
+		linear-gradient(315deg, rgb(85 221 224 / 22%), transparent 52%),
+		var(--color-canvas);
 	color: var(--color-structure);
 }
 
@@ -597,7 +634,7 @@ button.about-action:not(:disabled):hover {
 	height: 44px;
 	place-items: center;
 	border-radius: 50%;
-	background: var(--color-structure);
+	background: #2678B7;
 	color: var(--color-canvas);
 	font-family: var(--font-heading);
 	font-size: 16px;
@@ -689,10 +726,7 @@ button.about-action:not(:disabled):hover {
 .project-image {
 	position: absolute;
 	inset: 0;
-	background:
-		linear-gradient(135deg, rgb(85 221 224 / 22%), transparent 58%),
-		linear-gradient(315deg, rgb(246 174 45 / 22%), transparent 52%),
-		#E8EEF1;
+	background: var(--color-canvas);
 }
 
 .project-tag {
@@ -717,8 +751,11 @@ button.about-action:not(:disabled):hover {
 	flex-direction: column;
 	justify-content: center;
 	padding: 32px;
-	background: rgb(47 72 88 / 94%);
-	color: var(--color-canvas);
+	background:
+		linear-gradient(135deg, rgb(38 120 183 / 26%), transparent 58%),
+		linear-gradient(315deg, rgb(85 221 224 / 22%), transparent 52%),
+		var(--color-canvas);
+	color: var(--color-structure);
 	opacity: 0;
 	transition: opacity 200ms ease;
 }
@@ -730,7 +767,7 @@ button.about-action:not(:disabled):hover {
 
 .project-description h2 {
 	margin: 0 0 12px;
-	color: var(--color-canvas);
+	color: var(--color-structure);
 	font-family: var(--font-heading);
 	font-size: 28px;
 	font-weight: 600;
@@ -980,7 +1017,10 @@ button.about-action:not(:disabled):hover {
 	.project-description {
 		justify-content: flex-end;
 		padding: 24px;
-		background: linear-gradient(transparent, rgb(47 72 88 / 96%));
+		background:
+			linear-gradient(135deg, rgb(38 120 183 / 26%), transparent 58%),
+			linear-gradient(315deg, rgb(85 221 224 / 22%), transparent 52%),
+			var(--color-canvas);
 		opacity: 1;
 	}
 
