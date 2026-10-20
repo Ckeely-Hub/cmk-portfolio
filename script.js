@@ -1,4 +1,4 @@
-const dropdownItems = Array.from(document.querySelectorAll(".nav-item--dropdown"));
+const dropdownItems = Array.from(document.querySelectorAll(".nav-item--dropdown")).filter((item) => item.querySelector("button.nav-dropdown-toggle"));
 
 function closeDropdown(item, restoreFocus = false) {
 	item.classList.remove("is-open");
@@ -11,6 +11,12 @@ function closeDropdown(item, restoreFocus = false) {
 
 for (const item of dropdownItems) {
 	const toggle = item.querySelector(".nav-dropdown-toggle");
+
+	item.addEventListener("pointerleave", (event) => {
+		if (event.pointerType === "mouse") {
+			closeDropdown(item);
+		}
+	});
 
 	toggle.addEventListener("click", () => {
 		const shouldOpen = toggle.getAttribute("aria-expanded") !== "true";
