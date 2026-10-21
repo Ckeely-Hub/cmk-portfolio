@@ -615,13 +615,33 @@ button.about-action:hover {
 	margin-inline: auto;
 }
 
+.services-overview {
+	position: relative;
+	isolation: isolate;
+}
+
+.services-overview::before {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	width: 100vw;
+	transform: translateX(-50%);
+	background:
+		linear-gradient(to bottom, transparent 78%, var(--color-canvas) 100%),
+		linear-gradient(135deg, rgb(38 120 183 / 16%), transparent 58%),
+		linear-gradient(315deg, rgb(85 221 224 / 22%), transparent 52%),
+		var(--color-canvas);
+	content: "";
+}
+
 .services-hero {
 	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
-	align-items: center;
-	gap: clamp(32px, 6vw, 80px);
-	padding-block: 80px 64px;
-	border-bottom: 1px solid rgb(51 101 138 / 24%);
+	grid-template-columns: 1fr;
+	align-items: start;
+	gap: 16px;
+	padding-block: 80px 32px;
 }
 
 .services-hero h1 {
@@ -634,10 +654,7 @@ button.about-action:hover {
 }
 
 .services-hero p {
-	max-width: 56ch;
 	margin: 0;
-	padding-left: 24px;
-	border-left: 4px solid var(--color-interactive);
 	font-size: 18px;
 	line-height: 1.65;
 }
@@ -646,22 +663,34 @@ button.about-action:hover {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 20px;
-	padding-block: 40px 72px;
+	padding-block: 16px 72px;
 }
 
 .service-card {
 	min-height: 220px;
 	padding: 28px 24px;
 	border: 1px solid rgb(51 101 138 / 24%);
-	border-top: 4px solid var(--color-interactive);
+	border-top: 4px solid var(--service-color, var(--color-interactive));
 	border-radius: 4px;
 	background: #FFFFFF;
 	text-align: center;
 }
 
+.service-card--ux-design {
+	--service-color: #736ED1;
+}
+
+.service-card--content-design {
+	--service-color: #1B8BBB;
+}
+
+.service-card--technical-writing {
+	--service-color: #08A5A3;
+}
+
 .service-card h2 {
 	margin: 0;
-	color: var(--color-structure);
+	color: var(--service-color, var(--color-structure));
 	font-family: var(--font-heading);
 	font-size: 20px;
 	font-weight: 700;
@@ -823,15 +852,15 @@ button.about-action:hover {
 }
 
 .tag-label--design {
-	color: #C2185B;
+	color: #6E68CF;
 }
 
-.tag-label--ux-writing {
-	color: #7B1FA2;
+.tag-label--content-design {
+	color: #187DA9;
 }
 
 .tag-label--technical-writing {
-	color: #2E7D32;
+	color: #068281;
 }
 
 .project-pill:hover {
@@ -1093,7 +1122,11 @@ button.about-action:hover {
 	.services-hero {
 		grid-template-columns: 1fr;
 		gap: 20px;
-		padding-block: 60px 48px;
+		padding-block: 60px 24px;
+	}
+
+	.services-overview::before {
+		bottom: 0;
 	}
 
 	.services-hero h1 {
@@ -1107,7 +1140,7 @@ button.about-action:hover {
 	.service-list {
 		grid-template-columns: 1fr;
 		gap: 14px;
-		padding-block: 28px 48px;
+		padding-block: 12px 48px;
 	}
 
 	.service-card {
