@@ -328,8 +328,9 @@ a:focus-visible {
 }
 
 .about-page {
-	width: min(100% - 64px, 1120px);
-	margin-inline: auto;
+	background:
+		linear-gradient(135deg, rgb(38 120 183 / 12%), transparent 58%),
+		linear-gradient(315deg, rgb(85 221 224 / 18%), transparent 52%);
 }
 
 .contact-page {
@@ -386,6 +387,8 @@ a:focus-visible {
 
 .about-layout {
 	display: grid;
+	width: min(100% - 64px, 1120px);
+	margin-inline: auto;
 	grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
 	align-items: start;
 	gap: clamp(32px, 6vw, 80px);
@@ -1009,7 +1012,7 @@ a.about-action--copy:hover {
 
 .timeline-entry h3 {
 	margin: 0;
-	color: var(--color-structure);
+	color: #2678B7;
 	font-family: var(--font-heading);
 	font-size: 20px;
 	font-weight: 700;
@@ -1278,10 +1281,11 @@ a.about-action--copy:hover {
 	}
 
 	.about-page {
-		width: min(100% - 40px, 600px);
+		width: 100%;
 	}
 
 	.about-layout {
+		width: min(100% - 40px, 600px);
 		grid-template-columns: minmax(0, 1fr);
 		gap: 32px;
 		padding-block: 44px 64px;
@@ -1374,7 +1378,7 @@ a.about-action--copy:hover {
 	}
 
 	.about-page {
-		width: calc(100% - 32px);
+		width: 100%;
 	}
 
 	.about-layout {
