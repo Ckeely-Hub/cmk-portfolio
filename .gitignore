@@ -11,3 +11,6 @@ __MACOSX
 # Vercel & Background Logs
 .vercel
 *.log
+
+#Media Error
+Chloe_Keely_Headshot.png
