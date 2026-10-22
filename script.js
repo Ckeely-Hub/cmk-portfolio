@@ -1,6 +1,62 @@
 const copyEmailButton = document.querySelector("[data-copy-email]");
 const emailToast = document.querySelector("#email-copy-toast");
 const mobileMenuButton = document.querySelector("[data-mobile-menu-toggle]");
+const minorTooltip = document.querySelector("[data-minor-tooltip]");
+
+if (minorTooltip) {
+	const minorTooltipTrigger = minorTooltip.querySelector(".minor-tooltip-trigger");
+	const minorTooltipPanel = minorTooltip.querySelector(".minor-tooltip-panel");
+
+	function setMinorTooltipOpen(isOpen) {
+		minorTooltipTrigger.setAttribute("aria-expanded", String(isOpen));
+		minorTooltipPanel.hidden = !isOpen;
+
+		if (isOpen) {
+			minorTooltipPanel.style.setProperty("--minor-tooltip-shift", "0px");
+			const panelRect = minorTooltipPanel.getBoundingClientRect();
+			const leftShift = Math.max(8 - panelRect.left, Math.min(0, window.innerWidth - 8 - panelRect.right));
+			minorTooltipPanel.style.setProperty("--minor-tooltip-shift", `${leftShift}px`);
+		}
+	}
+
+	minorTooltip.addEventListener("pointerenter", (event) => {
+		if (event.pointerType === "mouse") {
+			setMinorTooltipOpen(true);
+		}
+	});
+
+	minorTooltip.addEventListener("pointerleave", (event) => {
+		if (event.pointerType === "mouse") {
+			setMinorTooltipOpen(false);
+		}
+	});
+
+	minorTooltipTrigger.addEventListener("focus", () => setMinorTooltipOpen(true));
+	minorTooltipTrigger.addEventListener("blur", () => {
+		if (!minorTooltip.matches(":hover")) {
+			setMinorTooltipOpen(false);
+		}
+	});
+
+	minorTooltipTrigger.addEventListener("click", (event) => {
+		if (event.detail === 0 || window.matchMedia("(hover: none)").matches) {
+			setMinorTooltipOpen(minorTooltipPanel.hidden);
+		}
+	});
+
+	document.addEventListener("pointerdown", (event) => {
+		if (!minorTooltip.contains(event.target)) {
+			setMinorTooltipOpen(false);
+		}
+	});
+
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape" && !minorTooltipPanel.hidden) {
+			setMinorTooltipOpen(false);
+			minorTooltipTrigger.focus();
+		}
+	});
+}
 
 if (mobileMenuButton) {
 	const siteNav = mobileMenuButton.closest(".site-nav");
