@@ -39,6 +39,27 @@ a {
 	text-decoration: none;
 }
 
+.skip-link {
+	position: absolute;
+	left: 16px;
+	z-index: 100;
+	padding: 10px 14px;
+	border: 2px solid var(--color-structure);
+	border-radius: 6px;
+	background: var(--color-canvas);
+	color: var(--color-structure);
+	font-family: var(--font-heading);
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none;
+	transform: translateY(-140%);
+	transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+	transform: translateY(16px);
+}
+
 a:focus-visible {
 	outline: 3px solid var(--color-interactive);
 	outline-offset: 4px;
