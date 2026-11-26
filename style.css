@@ -746,18 +746,25 @@ a.about-action--copy:hover {
 }
 
 .project-overview p {
-	max-width: 68ch;
+	max-width: none;
+	width: 100%;
 	margin: 0;
 	font-size: 16px;
 	line-height: 1.7;
 }
 
 .project-copy-section {
-	max-width: 76ch;
+	width: 100%;
+	max-width: none;
 }
 
 .project-detail-section {
 	padding-block: 40px;
+	border-bottom: 1px solid rgb(51 101 138 / 24%);
+}
+
+.project-detail-section:first-of-type {
+	border-top: 1px solid rgb(51 101 138 / 24%);
 }
 
 .project-copy-section h2 {
