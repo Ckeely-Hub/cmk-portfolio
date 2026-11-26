@@ -66,7 +66,13 @@ a:focus-visible {
 .site-header {
 	position: relative;
 	z-index: 2;
-	border-bottom: 1px solid rgb(51 101 138 / 20%);
+	border-bottom: 0;
+	box-shadow: 0 3px 10px rgb(38 60 74 / 12%);
+}
+
+body.home-page .site-header {
+	border-bottom: 0;
+	box-shadow: 0 3px 10px rgb(38 60 74 / 12%);
 }
 
 .site-footer {
@@ -1230,6 +1236,34 @@ a.about-action--copy:hover {
 	margin: 0;
 	font-size: 16px;
 	line-height: 1.6;
+}
+
+body.home-page #main-content {
+	background:
+		linear-gradient(to bottom, transparent 0, transparent 48%, rgb(248 249 250 / 86%) 76%, var(--color-canvas) 100%),
+		radial-gradient(ellipse at 48% 180px, rgb(248 249 250 / 92%) 0, rgb(248 249 250 / 72%) 110px, transparent 280px),
+		linear-gradient(135deg, rgb(38 120 183 / 16%), transparent 58%),
+		linear-gradient(315deg, rgb(85 221 224 / 36%), transparent 52%),
+		var(--color-canvas);
+	background-repeat: no-repeat;
+	background-size: 100% 680px;
+}
+
+body.home-page .hero {
+	background: transparent;
+}
+
+@media (max-width: 760px) {
+	body.home-page #main-content {
+		background:
+			linear-gradient(to bottom, transparent 0, transparent 44%, rgb(248 249 250 / 88%) 74%, var(--color-canvas) 100%),
+			radial-gradient(ellipse at 47% 145px, rgb(248 249 250 / 92%) 0, rgb(248 249 250 / 72%) 95px, transparent 230px),
+			linear-gradient(135deg, rgb(38 120 183 / 16%), transparent 58%),
+			linear-gradient(315deg, rgb(85 221 224 / 36%), transparent 52%),
+			var(--color-canvas);
+		background-repeat: no-repeat;
+		background-size: 100% 760px;
+	}
 }
 
 @media (max-width: 960px) {
