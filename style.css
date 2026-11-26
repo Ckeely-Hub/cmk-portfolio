@@ -689,9 +689,10 @@ a.about-action--copy:hover {
 	aspect-ratio: 4 / 3;
 	height: auto;
 	object-fit: cover;
-	border: 1px solid rgb(51 101 138 / 24%);
-	border-radius: 4px;
+	border: 0;
+	border-radius: 12px;
 	background: var(--color-canvas);
+	box-shadow: 0 3px 10px rgb(38 60 74 / 12%);
 }
 
 .project-facts {
@@ -703,10 +704,10 @@ a.about-action--copy:hover {
 .project-fact {
 	min-height: 168px;
 	padding: 24px;
-	border: 1px solid rgb(51 101 138 / 24%);
-	border-top: 4px solid var(--color-interactive);
-	border-radius: 4px;
+	border: 0;
+	border-radius: 12px;
 	background: #FFFFFF;
+	box-shadow: 0 3px 10px rgb(38 60 74 / 12%);
 	text-align: center;
 }
 
@@ -1730,4 +1731,16 @@ body.home-page .hero {
 		transform: none;
 		visibility: visible;
 	}
+}
+
+.prompt-category-list {
+	margin: 10px 0 18px;
+	padding-left: 22px;
+	list-style: disc;
+}
+
+.prompt-category-list li {
+	margin: 8px 0;
+	padding-left: 4px;
+	line-height: 1.6;
 }
