@@ -678,23 +678,14 @@ a.about-action--copy:hover {
 }
 
 .project-hero-media {
-	display: grid;
+	display: block;
 	width: 100%;
 	aspect-ratio: 4 / 3;
-	place-items: center;
+	height: auto;
+	object-fit: cover;
 	border: 1px solid rgb(51 101 138 / 24%);
 	border-radius: 4px;
-	background:
-		linear-gradient(135deg, rgb(38 120 183 / 26%), transparent 58%),
-		linear-gradient(315deg, rgb(85 221 224 / 22%), transparent 52%),
-		var(--color-canvas);
-	color: var(--color-structure);
-}
-
-.project-hero-media span {
-	font-family: var(--font-heading);
-	font-size: 14px;
-	font-weight: 600;
+	background: var(--color-canvas);
 }
 
 .project-facts {
@@ -1164,9 +1155,10 @@ a.about-action--copy:hover {
 	position: relative;
 	overflow: hidden;
 	min-width: 0;
-	border: 1px solid rgb(51 101 138 / 36%);
-	border-radius: 4px;
+	border: 0;
+	border-radius: 12px;
 	background: #E8EEF1;
+	box-shadow: 0 3px 10px rgb(38 60 74 / 12%);
 	aspect-ratio: 4 / 3;
 	isolation: isolate;
 }
@@ -1182,6 +1174,9 @@ a.about-action--copy:hover {
 .project-image {
 	position: absolute;
 	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	background: var(--color-canvas);
 }
 
